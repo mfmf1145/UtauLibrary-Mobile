@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 取自 OpenUtau/Colors/LightTheme.axaml -->
+    <color name="ou_background">#FFFFFF</color>
+    <color name="ou_window_background">#FFFFFF</color>
+    <color name="ic_launcher_background">#1D1A24</color>
+</resources>

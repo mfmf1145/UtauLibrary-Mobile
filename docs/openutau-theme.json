@@ -1,0 +1,3045 @@
+{
+  "source": {
+    "repo": "stakira/OpenUtau",
+    "canonicalRepo": "openutau/OpenUtau",
+    "commit": "5c3c83bbeced96718e85e4a96d127de3287cd14b",
+    "branch": "master",
+    "commitDate": "2026-10-09T07:24:42Z",
+    "license": "MIT",
+    "fetchedAt": "2026-10-11",
+    "fetchedVia": "raw.githubusercontent.com and api.github.com (git clone was too slow from this host)",
+    "note": "OpenUtau is Avalonia (XAML) based. Themes are two static ResourceDictionaries (Dark/Light) plus user YAML themes. Styles are theme-independent and reference DynamicResource palette keys."
+  },
+  "themeFiles": [
+    "OpenUtau/Colors/DarkTheme.axaml",
+    "OpenUtau/Colors/LightTheme.axaml",
+    "OpenUtau/Colors/CustomTheme.axaml",
+    "OpenUtau/Colors/CustomTheme.axaml.cs",
+    "OpenUtau/Colors/Brushes.axaml",
+    "OpenUtau/Styles/Styles.axaml",
+    "OpenUtau/Styles/PianoRollStyles.axaml",
+    "OpenUtau/App.axaml",
+    "OpenUtau/ThemeManager.cs",
+    "OpenUtau/ThemeLoader.cs",
+    "OpenUtau/Strings/Strings.axaml"
+  ],
+  "themeSwitching": {
+    "resourceIncludes": {
+      "value": "themes-dark -> /Colors/DarkTheme.axaml, themes-light -> /Colors/LightTheme.axaml, themes-custom -> /Colors/CustomTheme.axaml",
+      "ref": "OpenUtau/App.axaml#L29-L31"
+    },
+    "brushesMerge": {
+      "value": "/Colors/Brushes.axaml merged into Application.Resources",
+      "ref": "OpenUtau/App.axaml#L32-L34"
+    },
+    "appStyles": {
+      "value": "FluentTheme + DataGrid + ColorPicker + AvaloniaEdit + /Styles/Styles.axaml",
+      "ref": "OpenUtau/App.axaml#L38-L43"
+    },
+    "themeList": {
+      "value": "[\"Light\", \"Dark\", ...custom yaml themes]",
+      "ref": "OpenUtau/ThemeManager.cs#L80-L83"
+    },
+    "applyCustomTheme": {
+      "value": "CustomTheme.ApplyTheme copies every ThemeYaml color field into Application.Resources",
+      "ref": "OpenUtau/Colors/CustomTheme.axaml.cs#L67-L113"
+    }
+  },
+  "dark": {
+    "colors": {
+      "BackgroundColor": "#26232C",
+      "BackgroundColorPointerOver": "#36313F",
+      "BackgroundColorPressed": "#484255",
+      "BackgroundColorDisabled": "#2C2933",
+      "ForegroundColor": "#CDCAD4",
+      "ForegroundColorPointerOver": "#E9E6F0",
+      "ForegroundColorPressed": "#FFFFFF",
+      "ForegroundColorDisabled": "#7E778C",
+      "BorderColor": "#544E60",
+      "BorderColorPointerOver": "#878096",
+      "SystemAccentColor": "#4EA6EA",
+      "SystemAccentColorLight1": "#90CAF9",
+      "SystemAccentColorDark1": "#1E88E5",
+      "NeutralAccentColor": "#878096",
+      "NeutralAccentColorPointerOver": "#B0ABBC",
+      "AccentColor1": "#4EA6EA",
+      "AccentColor2": "#FF679D",
+      "AccentColor3": "#E62E6E",
+      "TickLineColor": "#615B73",
+      "BarNumberColor": "#B0ABBC",
+      "FinalPitchColor": "#C0BACD",
+      "TrackBackgroundAltColor": "#302C38",
+      "WarningColor": "#433519",
+      "WhiteKeyColorLeft": "#CC527C",
+      "WhiteKeyColorRight": "#FF4D8B",
+      "WhiteKeyNameColor": "#FFFFFF",
+      "CenterKeyColorLeft": "#CCA5B0",
+      "CenterKeyColorRight": "#FFCEDC",
+      "CenterKeyNameColor": "#FF4D8B",
+      "BlackKeyColorLeft": "Transparent",
+      "BlackKeyColorRight": "Transparent",
+      "BlackKeyNameColor": "#CDCAD4"
+    },
+    "semanticBrushes": {
+      "SystemRegionBrush": {
+        "color": "BackgroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L3"
+      },
+      "SystemControlBackgroundAltHighBrush": {
+        "color": "BackgroundColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L5"
+      },
+      "BackgroundBrushSemi": {
+        "color": "BackgroundColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L7"
+      },
+      "SystemControlBackgroundAltHighBrushPointerOver": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L9"
+      },
+      "SystemControlBackgroundAltHighBrushDisabled": {
+        "color": "BackgroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L11"
+      },
+      "SystemControlBackgroundBaseLowBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L13"
+      },
+      "SystemControlForegroundBaseHighBrush": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L15"
+      },
+      "SystemControlForegroundBaseHighBrushPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L17"
+      },
+      "SystemControlForegroundBaseHighBrushDisabled": {
+        "color": "ForegroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L19"
+      },
+      "SystemControlForegroundBaseMediumBrush": {
+        "color": "BorderColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L21"
+      },
+      "SystemControlHighlightBaseMediumHighBrush": {
+        "color": "BorderColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L23"
+      },
+      "SystemControlDisabledBaseMediumLowBrush": {
+        "color": "ForegroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L25"
+      },
+      "SystemControlHighlightAltBaseHighBrush": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L27"
+      },
+      "SystemControlHighlightBaseHighBrush": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L29"
+      },
+      "MenuFlyoutPresenterBackground": {
+        "color": "BackgroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L31"
+      },
+      "MenuFlyoutItemBackground": {
+        "color": "BackgroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L33"
+      },
+      "MenuFlyoutItemBackgroundPointerOver": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L35"
+      },
+      "MenuFlyoutItemBackgroundDisabled": {
+        "color": "BackgroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L37"
+      },
+      "MenuFlyoutItemForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L39"
+      },
+      "MenuFlyoutItemForegroundPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L41"
+      },
+      "MenuFlyoutItemForegroundDisabled": {
+        "color": "ForegroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L43"
+      },
+      "SystemControlBackgroundAltMediumLowBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L46"
+      },
+      "SystemControlPageBackgroundAltMediumBrush": {
+        "color": "BackgroundColorPressed",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L49"
+      },
+      "SystemControlTransientBackgroundBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L52"
+      },
+      "SystemControlHighlightListLowBrush": {
+        "color": "ForegroundColorPressed",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L55"
+      },
+      "SystemControlDisabledChromeDisabledLowBrush": {
+        "color": "ForegroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L58"
+      },
+      "TextControlBackgroundDisabled": {
+        "color": "BackgroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L61"
+      },
+      "SystemControlBackgroundChromeMediumLowBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L63"
+      },
+      "DataGridColumnHeaderBackgroundBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L65"
+      },
+      "DataGridColumnHeaderForegroundBrush": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L67"
+      },
+      "DataGridScrollBarsSeparatorBackground": {
+        "color": "BackgroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L69"
+      },
+      "ButtonBackgroundPointerOver": {
+        "color": "ForegroundColorPressed",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L72"
+      },
+      "ButtonBackgroundDisabled": {
+        "color": "BackgroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L74"
+      },
+      "ButtonForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L76"
+      },
+      "ButtonForegroundPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L78"
+      },
+      "ToggleButtonForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L80"
+      },
+      "ToggleButtonForegroundPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L82"
+      },
+      "ComboBoxForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L84"
+      },
+      "ComboBoxBorderBrush": {
+        "color": "BorderColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L86"
+      },
+      "ComboBoxBorderBrushPointerOver": {
+        "color": "BorderColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L88"
+      },
+      "ComboBoxItemForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L90"
+      },
+      "ComboBoxItemForegroundPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L92"
+      },
+      "ToggleSwitchContentForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L94"
+      },
+      "ToggleSwitchStrokeOff": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L96"
+      },
+      "ToggleSwitchStrokeOffPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L98"
+      },
+      "ToggleSwitchKnobFillOff": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L100"
+      },
+      "ToggleSwitchKnobFillOffPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L102"
+      },
+      "MenuFlyoutPresenterBorderBrush": {
+        "color": "BorderColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L104"
+      },
+      "TickLineBrush": {
+        "color": "TickLineColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L107"
+      },
+      "TickLineBrushLow": {
+        "color": "TickLineColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L109"
+      },
+      "BarNumberBrush": {
+        "color": "BarNumberColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L111"
+      },
+      "FinalPitchBrush": {
+        "color": "FinalPitchColor",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L113"
+      },
+      "RealCurveStrokeBrush": {
+        "color": "AccentColor1",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L115"
+      },
+      "RealCurveFillBrush": {
+        "color": "AccentColor1",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L117"
+      },
+      "TrackBackgroundAltBrush": {
+        "color": "TrackBackgroundAltColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L121"
+      },
+      "NeutralAccentBrush": {
+        "color": "NeutralAccentColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L123"
+      },
+      "NeutralAccentBrushSemi": {
+        "color": "NeutralAccentColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L125"
+      },
+      "NeutralAccentBrushSemi2": {
+        "color": "NeutralAccentColor",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L127"
+      },
+      "NeutralAccentBrushPointerOver": {
+        "color": "NeutralAccentColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L129"
+      },
+      "AccentBrush1": {
+        "color": "AccentColor1",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L131"
+      },
+      "AccentBrush1Semi": {
+        "color": "AccentColor1",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L133"
+      },
+      "AccentBrush2": {
+        "color": "AccentColor2",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L135"
+      },
+      "AccentBrush2Semi": {
+        "color": "AccentColor2",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L137"
+      },
+      "AccentBrush3": {
+        "color": "AccentColor3",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L139"
+      },
+      "AccentBrush3Semi": {
+        "color": "AccentColor3",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L141"
+      },
+      "SelectedTrackAccentBrush": {
+        "color": "#4EA6EA",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L143"
+      },
+      "SelectedTrackAccentLightBrush": {
+        "color": "#90CAF9",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L145"
+      },
+      "SelectedTrackAccentLightBrushSemi": {
+        "color": "#90CAF9",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L147"
+      },
+      "SelectedTrackAccentDarkBrush": {
+        "color": "#1E88E5",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L149"
+      },
+      "SelectedTrackCenterKeyBrush": {
+        "color": "#C8E5FC",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L151"
+      },
+      "WarningBrush": {
+        "color": "WarningColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L153"
+      },
+      "WhiteKeyBrush": {
+        "color": "WhiteKeyColorLeft",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L156"
+      },
+      "WhiteKeyNameBrush": {
+        "color": "WhiteKeyNameColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L162"
+      },
+      "CenterKeyBrush": {
+        "color": "CenterKeyColorLeft",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L164"
+      },
+      "CenterKeyNameBrush": {
+        "color": "CenterKeyNameColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L170"
+      },
+      "BlackKeyBrush": {
+        "color": "BlackKeyColorLeft",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L172"
+      },
+      "BlackKeyNameBrush": {
+        "color": "BlackKeyNameColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L178"
+      }
+    },
+    "metrics": {
+      "window": {
+        "defaultWidth": {
+          "value": 1200,
+          "ref": "OpenUtau.Core/Util/WindowSize.cs#L3"
+        },
+        "defaultHeight": {
+          "value": 650,
+          "ref": "OpenUtau.Core/Util/WindowSize.cs#L4"
+        },
+        "mainWindowMinWidth": {
+          "value": 300,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L12"
+        },
+        "mainWindowMinHeight": {
+          "value": 200,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L12"
+        },
+        "mainWindowIcon": {
+          "value": "/Assets/open-utau.ico",
+          "ref": "OpenUtau/Views/MainWindow.axaml#L11"
+        },
+        "splashWidth": {
+          "value": 400,
+          "ref": "OpenUtau/Views/SplashWindow.axaml#L5"
+        },
+        "splashHeight": {
+          "value": 180,
+          "ref": "OpenUtau/Views/SplashWindow.axaml#L5"
+        },
+        "themeEditorWidth": {
+          "value": 325,
+          "ref": "OpenUtau/Views/ThemeEditorWindow.axaml#L10"
+        },
+        "themeEditorHeight": {
+          "value": 500,
+          "ref": "OpenUtau/Views/ThemeEditorWindow.axaml#L10"
+        },
+        "themeEditorMinWidth": {
+          "value": 325,
+          "ref": "OpenUtau/Views/ThemeEditorWindow.axaml#L10"
+        }
+      },
+      "cornerRadius": {
+        "ControlCornerRadius": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L7"
+        },
+        "OverlayCornerRadius": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L8"
+        },
+        "NotificationCard": {
+          "value": 6,
+          "ref": "OpenUtau/Styles/Styles.axaml#L498"
+        },
+        "Border.playback": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L291"
+        },
+        "Border.tips": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L319"
+        },
+        "HeaderedContentControl.groupbox": {
+          "value": 3,
+          "ref": "OpenUtau/Styles/Styles.axaml#L401"
+        },
+        "Slider.fader.thumb": {
+          "value": 2,
+          "ref": "OpenUtau/Styles/Styles.axaml#L463"
+        },
+        "ColorPicker.TextBox": {
+          "value": "0,4,4,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L491"
+        }
+      },
+      "fonts": {
+        "uiFontFamily": {
+          "value": "Segoe UI,San Francisco,Helvetica Neue",
+          "ref": "OpenUtau/Strings/Strings.axaml#L1026"
+        },
+        "uiFontFamilyZhCN": {
+          "value": "Microsoft YaHei UI,PingFang SC,Segoe UI,San Francisco,Helvetica Neue",
+          "ref": "OpenUtau/Strings/Strings.zh-CN.axaml#L912"
+        },
+        "uiFontFamilyJaJP": {
+          "value": "Meiryo UI,Hiragino Sans,Segoe UI,San Francisco,Helvetica Neue",
+          "ref": "OpenUtau/Strings/Strings.ja-JP.axaml#L848"
+        },
+        "uiFontFamilyThTH": {
+          "value": "Noto serif Thai,Angsana New,Noto Sans Thai,IBM Plex Sans Thai,Segoe UI,San Francisco,Helvetica Neue",
+          "ref": "OpenUtau/Strings/Strings.th-TH.axaml#L849"
+        },
+        "monoFontFamilyYamlEditor": {
+          "value": "Cascadia Mono,Consolas,Menlo,DejaVu Sans Mono,monospace",
+          "ref": "OpenUtau/Controls/YamlEditor.axaml#L11"
+        },
+        "playbackClockFontFamily": {
+          "value": "Monospace",
+          "ref": "OpenUtau/Styles/Styles.axaml#L299"
+        },
+        "baseFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L81"
+        },
+        "menuItemFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L23"
+        },
+        "contextMenuItemFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L60"
+        },
+        "textBoxFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L90"
+        },
+        "buttonFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L101"
+        },
+        "toggleButtonSwitchFontSize": {
+          "value": 13,
+          "ref": "OpenUtau/Styles/Styles.axaml#L207"
+        },
+        "comboBoxFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L218"
+        },
+        "comboBoxItemFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L225"
+        },
+        "listBoxToolbarFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L36"
+        },
+        "tabItemFontSize": {
+          "value": 13,
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L122"
+        },
+        "dataGridFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L274"
+        },
+        "playbackClockFontSize": {
+          "value": 11,
+          "ref": "OpenUtau/Styles/Styles.axaml#L298"
+        },
+        "radioButtonFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L208"
+        },
+        "welcomeTitleFontSize": {
+          "value": 20,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L100"
+        },
+        "welcomeButtonTitleFontSize": {
+          "value": 14,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L122"
+        },
+        "trackHeaderVolumePanFontSize": {
+          "value": 9,
+          "ref": "OpenUtau/Controls/TrackHeader.axaml#L209"
+        },
+        "pianoRollRulerFontSize": {
+          "value": 10,
+          "ref": "OpenUtau/Controls/PianoRoll.axaml#L524"
+        },
+        "expanderHeaderFontWeight": {
+          "value": "Bold",
+          "ref": "OpenUtau/Styles/Styles.axaml#L479"
+        }
+      },
+      "button": {
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L102"
+        },
+        "margin": {
+          "value": "0,4",
+          "ref": "OpenUtau/Styles/Styles.axaml#L103"
+        },
+        "padding": {
+          "value": "4,0,4,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L104"
+        },
+        "borderThickness": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L100"
+        },
+        "horizontalContentAlignment": {
+          "value": "Center",
+          "ref": "OpenUtau/Styles/Styles.axaml#L105"
+        },
+        "verticalContentAlignment": {
+          "value": "Center",
+          "ref": "OpenUtau/Styles/Styles.axaml#L106"
+        }
+      },
+      "toggleButton": {
+        "normal.background": {
+          "value": "{DynamicResource SystemControlBackgroundAltHighBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L147"
+        },
+        "normal.pointerOverBackground": {
+          "value": "{DynamicResource NeutralAccentBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L151"
+        },
+        "normal.pressedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushPointerOver}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L154"
+        },
+        "normal.checkedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L157"
+        },
+        "toolbar.borderThickness": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L168"
+        },
+        "switch.fontSize": {
+          "value": 13,
+          "ref": "OpenUtau/Styles/Styles.axaml#L207"
+        },
+        "switch.padding": {
+          "value": "6,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L208"
+        },
+        "switch.borderThickness": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L209"
+        }
+      },
+      "textBox": {
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L87"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L88"
+        },
+        "padding": {
+          "value": "4,1",
+          "ref": "OpenUtau/Styles/Styles.axaml#L89"
+        },
+        "margin": {
+          "value": "0,0,0,4",
+          "ref": "OpenUtau/Styles/Styles.axaml#L90"
+        },
+        "fontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L91"
+        },
+        "verticalAlignment": {
+          "value": "Top",
+          "ref": "OpenUtau/Styles/Styles.axaml#L92"
+        },
+        "selectionForegroundBrush": {
+          "value": "White",
+          "ref": "OpenUtau/Styles/Styles.axaml#L93"
+        },
+        "disabledForeground": {
+          "value": "{DynamicResource TextControlForegroundDisabled}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L96"
+        },
+        "focusBorderBrush": {
+          "value": "{DynamicResource SelectedTrackAccentBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L191"
+        },
+        "colorPickerTextBoxCornerRadius": {
+          "value": "0,4,4,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L491"
+        },
+        "colorPickerTextBoxHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/Styles.axaml#L492"
+        },
+        "colorPickerTextBoxPadding": {
+          "value": 5,
+          "ref": "OpenUtau/Styles/Styles.axaml#L493"
+        }
+      },
+      "comboBox": {
+        "background": {
+          "value": "{DynamicResource SystemRegionBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L217"
+        },
+        "fontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L218"
+        },
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L219"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L220"
+        },
+        "margin": {
+          "value": "0,4",
+          "ref": "OpenUtau/Styles/Styles.axaml#L221"
+        },
+        "padding": {
+          "value": "4,0,0,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L222"
+        },
+        "borderBrush": {
+          "value": "{DynamicResource BorderColor} (ComboBoxBorderBrush)",
+          "ref": "OpenUtau/Colors/Brushes.axaml#L86"
+        },
+        "dropDownGlyphFill": {
+          "value": "{DynamicResource SystemControlForegroundBaseHighBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L232"
+        }
+      },
+      "comboBoxItem": {
+        "fontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L225"
+        },
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L226"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L227"
+        },
+        "margin": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L228"
+        },
+        "padding": {
+          "value": "4,2,0,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L229"
+        },
+        "selectedBackground": {
+          "value": "{DynamicResource SelectedTrackAccentLightBrushSemi}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L32"
+        }
+      },
+      "listBoxItem": {
+        "minHeight": {
+          "value": 24,
+          "ref": "OpenUtau/Styles/Styles.axaml#L236"
+        },
+        "height": {
+          "value": 24,
+          "ref": "OpenUtau/Styles/Styles.axaml#L237"
+        },
+        "padding": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L238"
+        },
+        "margin": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L239"
+        },
+        "selectedBackground": {
+          "value": "{DynamicResource SelectedTrackAccentLightBrushSemi}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L41"
+        }
+      },
+      "listBoxToolbarItem": {
+        "borderThickness": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L45"
+        },
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L46"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L47"
+        },
+        "width": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L48"
+        },
+        "padding": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L49"
+        },
+        "background": {
+          "value": "{DynamicResource SystemControlBackgroundAltHighBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L50"
+        },
+        "pointerOverBackground": {
+          "value": "{DynamicResource NeutralAccentBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L54"
+        },
+        "pressedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushPointerOver}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L57"
+        },
+        "selectedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L60"
+        },
+        "iconGridSize": {
+          "value": "18x18",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L91"
+        },
+        "iconScale": {
+          "value": "0.55",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L94"
+        }
+      },
+      "checkBox": {
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L243"
+        },
+        "minWidth": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L244"
+        },
+        "templateGridHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L247"
+        },
+        "templateGridWidth": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L248"
+        },
+        "checkedBackground": {
+          "value": "{DynamicResource SelectedTrackAccentBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L9"
+        },
+        "checkedPointerOverBackground": {
+          "value": "{DynamicResource SelectedTrackAccentLightBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L13"
+        },
+        "checkedPressedBackground": {
+          "value": "{DynamicResource SelectedTrackAccentDarkBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L17"
+        }
+      },
+      "menu": {
+        "height": {
+          "value": 24,
+          "ref": "OpenUtau/Styles/Styles.axaml#L19"
+        },
+        "menuItemHeight": {
+          "value": 24,
+          "ref": "OpenUtau/Styles/Styles.axaml#L24"
+        },
+        "menuItemPadding": {
+          "value": "8,2,8,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L25"
+        },
+        "menuItemBackground": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L22"
+        },
+        "contextMenuItemPadding": {
+          "value": "4,2,4,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L61"
+        },
+        "separatorBackground": {
+          "value": "{DynamicResource SystemControlHighlightBaseMediumHighBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L44"
+        },
+        "separatorMargin": {
+          "value": "2,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L46"
+        },
+        "separatorHeight": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/Styles.axaml#L47"
+        },
+        "flyoutMinHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L9"
+        },
+        "flyoutScrollerMargin": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L10"
+        },
+        "comboBoxDropdownContentMargin": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L11"
+        },
+        "chevronScale": {
+          "value": "Scale(0.75,0.75)",
+          "ref": "OpenUtau/Styles/Styles.axaml#L28"
+        }
+      },
+      "progressBar": {
+        "background": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L286"
+        },
+        "foreground": {
+          "value": "{DynamicResource AccentBrush1}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L287"
+        }
+      },
+      "scrollBarMusic": {
+        "trackRectExpandedFill": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L331"
+        },
+        "thumbExpandedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L334"
+        },
+        "thumbExpandedPointerOverBackground": {
+          "value": "{DynamicResource NeutralAccentBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L337"
+        },
+        "lineButtonBackground": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L340"
+        },
+        "arrowPathSize": {
+          "value": "24x24",
+          "ref": "OpenUtau/Styles/Styles.axaml#L366"
+        },
+        "arrowFill": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L367"
+        },
+        "arrowPointerOverFill": {
+          "value": "{DynamicResource NeutralAccentBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L372"
+        }
+      },
+      "sliderFader": {
+        "focusable": {
+          "value": false,
+          "ref": "OpenUtau/Styles/Styles.axaml#L411"
+        },
+        "foreground": {
+          "value": "{DynamicResource AccentBrush1}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L412"
+        },
+        "thumbTemplateSize": {
+          "value": "16x6",
+          "ref": "OpenUtau/Styles/Styles.axaml#L463"
+        },
+        "thumbCornerRadius": {
+          "value": 2,
+          "ref": "OpenUtau/Styles/Styles.axaml#L463"
+        },
+        "pointerOverForeground": {
+          "value": "{DynamicResource AccentBrush1}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L457"
+        }
+      },
+      "expander": {
+        "margin": {
+          "value": "4,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L470"
+        },
+        "padding": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L471"
+        },
+        "isExpandedDefault": {
+          "value": true,
+          "ref": "OpenUtau/Styles/Styles.axaml#L472"
+        },
+        "minHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/Styles.axaml#L473"
+        },
+        "background": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L474"
+        },
+        "headerHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/Styles.axaml#L478"
+        },
+        "headerMinHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/Styles.axaml#L479"
+        },
+        "headerFontWeight": {
+          "value": "Bold",
+          "ref": "OpenUtau/Styles/Styles.axaml#L479"
+        },
+        "chevronBorderHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L482"
+        },
+        "headerContentMargin": {
+          "value": "7,0,0,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L485"
+        }
+      },
+      "borderPlayback": {
+        "cornerRadius": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L291"
+        },
+        "borderThickness": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/Styles.axaml#L292"
+        },
+        "borderBrush": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L293"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L294"
+        },
+        "textBlockPadding": {
+          "value": "6,0,0,1",
+          "ref": "OpenUtau/Styles/Styles.axaml#L297"
+        },
+        "textBlockFontSize": {
+          "value": 11,
+          "ref": "OpenUtau/Styles/Styles.axaml#L298"
+        },
+        "buttonWidth": {
+          "value": 21,
+          "ref": "OpenUtau/Styles/Styles.axaml#L310"
+        },
+        "buttonHeight": {
+          "value": 19,
+          "ref": "OpenUtau/Styles/Styles.axaml#L311"
+        },
+        "buttonBackground": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L312"
+        }
+      },
+      "borderTips": {
+        "cornerRadius": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L319"
+        },
+        "background": {
+          "value": "{DynamicResource SystemControlBackgroundAltHighBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L320"
+        },
+        "borderBrush": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L321"
+        },
+        "borderThickness": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/Styles.axaml#L322"
+        },
+        "padding": {
+          "value": 2,
+          "ref": "OpenUtau/Styles/Styles.axaml#L323"
+        },
+        "textLineHeight": {
+          "value": 18,
+          "ref": "OpenUtau/Styles/Styles.axaml#L327"
+        }
+      },
+      "groupBox": {
+        "margin": {
+          "value": 5,
+          "ref": "OpenUtau/Styles/Styles.axaml#L381"
+        },
+        "borderThickness": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/Styles.axaml#L400"
+        },
+        "cornerRadius": {
+          "value": 3,
+          "ref": "OpenUtau/Styles/Styles.axaml#L401"
+        },
+        "headerBorderPadding": {
+          "value": "2,0,2,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L396"
+        },
+        "headerBorderMargin": {
+          "value": "5,0,0,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L396"
+        },
+        "contentPadding": {
+          "value": "12,12,12,8",
+          "ref": "OpenUtau/Styles/Styles.axaml#L399"
+        },
+        "contentMargin": {
+          "value": "0,8,0,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L399"
+        }
+      },
+      "notificationCard": {
+        "cornerRadius": {
+          "value": 6,
+          "ref": "OpenUtau/Styles/Styles.axaml#L498"
+        },
+        "boxShadow": {
+          "value": "0 4 12 0 #20000000",
+          "ref": "OpenUtau/Styles/Styles.axaml#L504"
+        },
+        "accentBarWidth": {
+          "value": 6,
+          "ref": "OpenUtau/Styles/Styles.axaml#L513"
+        },
+        "contentMargin": {
+          "value": "14,10",
+          "ref": "OpenUtau/Styles/Styles.axaml#L519"
+        }
+      },
+      "dataGrid": {
+        "columnHeaderFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L274"
+        },
+        "columnHeaderMinHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L275"
+        },
+        "cellFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L278"
+        },
+        "cellMinHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L279"
+        }
+      },
+      "toggleSwitch": {
+        "checkedKnobBackground": {
+          "value": "{DynamicResource AccentBrush1}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L213"
+        }
+      },
+      "tabItem": {
+        "fontSize": {
+          "value": 13,
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L122"
+        },
+        "minHeight": {
+          "value": 28,
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L123"
+        },
+        "padding": {
+          "value": "10,2",
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L124"
+        }
+      },
+      "radioButton": {
+        "padding": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L207"
+        },
+        "fontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L208"
+        },
+        "outerEllipseSize": {
+          "value": "14x14",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L220-L223"
+        },
+        "checkGlyphSize": {
+          "value": "7x7",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L241-L242"
+        },
+        "templateGridColumns": {
+          "value": "20,*",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L218"
+        },
+        "templateGridHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L219"
+        }
+      },
+      "spacing": {
+        "trackHeaderWidth": {
+          "value": 300,
+          "ref": "OpenUtau/Controls/TrackHeader.axaml#L7"
+        },
+        "trackHeaderHeight": {
+          "value": 104,
+          "ref": "OpenUtau/Controls/TrackHeader.axaml#L7"
+        },
+        "groupboxMargin": {
+          "value": 5,
+          "ref": "OpenUtau/Styles/Styles.axaml#L381"
+        },
+        "expanderMargin": {
+          "value": "4,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L470"
+        },
+        "windowContentMarginWelcome": {
+          "value": "60,50,60,40",
+          "ref": "OpenUtau/Views/MainWindow.axaml#L91"
+        },
+        "playbackBorderMargin": {
+          "value": "4,0",
+          "ref": "OpenUtau/Views/MainWindow.axaml#L277"
+        },
+        "playbackBorderWidthTime": {
+          "value": 72,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L277"
+        },
+        "gridSplitterHeight": {
+          "value": 10,
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L117"
+        }
+      },
+      "viewConstants": {
+        "trackHeightMax": {
+          "value": 144,
+          "ref": "OpenUtau/ViewConstants.cs#L15"
+        },
+        "trackHeightMin": {
+          "value": 44,
+          "ref": "OpenUtau/ViewConstants.cs#L16"
+        },
+        "trackHeightDefault": {
+          "value": 104,
+          "ref": "OpenUtau/ViewConstants.cs#L17"
+        },
+        "trackHeightDelta": {
+          "value": 20,
+          "ref": "OpenUtau/ViewConstants.cs#L18"
+        },
+        "pianoRollMinHeight": {
+          "value": 24,
+          "ref": "OpenUtau/ViewConstants.cs#L23"
+        },
+        "noteHeightMax": {
+          "value": 128,
+          "ref": "OpenUtau/ViewConstants.cs#L25"
+        },
+        "noteHeightMin": {
+          "value": 8,
+          "ref": "OpenUtau/ViewConstants.cs#L26"
+        },
+        "noteHeightDefault": {
+          "value": 22,
+          "ref": "OpenUtau/ViewConstants.cs#L27"
+        },
+        "resizeMargin": {
+          "value": 8,
+          "ref": "OpenUtau/ViewConstants.cs#L33"
+        },
+        "expHeightMin": {
+          "value": 132,
+          "ref": "OpenUtau/ViewConstants.cs#L51"
+        },
+        "expHeightMax": {
+          "value": 600,
+          "ref": "OpenUtau/ViewConstants.cs#L52"
+        }
+      }
+    },
+    "fonts": {
+      "uiFontFamily": {
+        "value": "Segoe UI,San Francisco,Helvetica Neue",
+        "ref": "OpenUtau/Strings/Strings.axaml#L1026"
+      },
+      "uiFontFamilyZhCN": {
+        "value": "Microsoft YaHei UI,PingFang SC,Segoe UI,San Francisco,Helvetica Neue",
+        "ref": "OpenUtau/Strings/Strings.zh-CN.axaml#L912"
+      },
+      "uiFontFamilyJaJP": {
+        "value": "Meiryo UI,Hiragino Sans,Segoe UI,San Francisco,Helvetica Neue",
+        "ref": "OpenUtau/Strings/Strings.ja-JP.axaml#L848"
+      },
+      "uiFontFamilyThTH": {
+        "value": "Noto serif Thai,Angsana New,Noto Sans Thai,IBM Plex Sans Thai,Segoe UI,San Francisco,Helvetica Neue",
+        "ref": "OpenUtau/Strings/Strings.th-TH.axaml#L849"
+      },
+      "monoFontFamilyYamlEditor": {
+        "value": "Cascadia Mono,Consolas,Menlo,DejaVu Sans Mono,monospace",
+        "ref": "OpenUtau/Controls/YamlEditor.axaml#L11"
+      },
+      "playbackClockFontFamily": {
+        "value": "Monospace",
+        "ref": "OpenUtau/Styles/Styles.axaml#L299"
+      },
+      "baseFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L81"
+      },
+      "menuItemFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L23"
+      },
+      "contextMenuItemFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L60"
+      },
+      "textBoxFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L90"
+      },
+      "buttonFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L101"
+      },
+      "toggleButtonSwitchFontSize": {
+        "value": 13,
+        "ref": "OpenUtau/Styles/Styles.axaml#L207"
+      },
+      "comboBoxFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L218"
+      },
+      "comboBoxItemFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L225"
+      },
+      "listBoxToolbarFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L36"
+      },
+      "tabItemFontSize": {
+        "value": 13,
+        "ref": "OpenUtau/Views/SingersDialog.axaml#L122"
+      },
+      "dataGridFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L274"
+      },
+      "playbackClockFontSize": {
+        "value": 11,
+        "ref": "OpenUtau/Styles/Styles.axaml#L298"
+      },
+      "radioButtonFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L208"
+      },
+      "welcomeTitleFontSize": {
+        "value": 20,
+        "ref": "OpenUtau/Views/MainWindow.axaml#L100"
+      },
+      "welcomeButtonTitleFontSize": {
+        "value": 14,
+        "ref": "OpenUtau/Views/MainWindow.axaml#L122"
+      },
+      "trackHeaderVolumePanFontSize": {
+        "value": 9,
+        "ref": "OpenUtau/Controls/TrackHeader.axaml#L209"
+      },
+      "pianoRollRulerFontSize": {
+        "value": 10,
+        "ref": "OpenUtau/Controls/PianoRoll.axaml#L524"
+      },
+      "expanderHeaderFontWeight": {
+        "value": "Bold",
+        "ref": "OpenUtau/Styles/Styles.axaml#L479"
+      }
+    }
+  },
+  "light": {
+    "colors": {
+      "BackgroundColor": "#FFFFFF",
+      "BackgroundColorPointerOver": "#F0F0F0",
+      "BackgroundColorPressed": "#E0E0E0",
+      "BackgroundColorDisabled": "#D0D0D0",
+      "ForegroundColor": "#000000",
+      "ForegroundColorPointerOver": "#000000",
+      "ForegroundColorPressed": "#202020",
+      "ForegroundColorDisabled": "#808080",
+      "BorderColor": "#707070",
+      "BorderColorPointerOver": "#B0B0B0",
+      "SystemAccentColor": "#4EA6EA",
+      "SystemAccentColorLight1": "#90CAF9",
+      "SystemAccentColorDark1": "#1E88E5",
+      "NeutralAccentColor": "#ADA1B3",
+      "NeutralAccentColorPointerOver": "#948A99",
+      "AccentColor1": "#4EA6EA",
+      "AccentColor2": "#FF679D",
+      "AccentColor3": "#E62E6E",
+      "TickLineColor": "#AFA3B5",
+      "BarNumberColor": "#AFA3B5",
+      "FinalPitchColor": "#C0C0C0",
+      "TrackBackgroundAltColor": "#F0F0F0",
+      "WarningColor": "#FFF4CE",
+      "WhiteKeyColorLeft": "Transparent",
+      "WhiteKeyColorRight": "Transparent",
+      "WhiteKeyNameColor": "#FF347c",
+      "CenterKeyColorLeft": "#FFDDE6",
+      "CenterKeyColorRight": "#FFCEDC",
+      "CenterKeyNameColor": "#FF347C",
+      "BlackKeyColorLeft": "#FF71A3",
+      "BlackKeyColorRight": "#FF347C",
+      "BlackKeyNameColor": "#FFFFFF"
+    },
+    "semanticBrushes": {
+      "SystemRegionBrush": {
+        "color": "BackgroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L3"
+      },
+      "SystemControlBackgroundAltHighBrush": {
+        "color": "BackgroundColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L5"
+      },
+      "BackgroundBrushSemi": {
+        "color": "BackgroundColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L7"
+      },
+      "SystemControlBackgroundAltHighBrushPointerOver": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L9"
+      },
+      "SystemControlBackgroundAltHighBrushDisabled": {
+        "color": "BackgroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L11"
+      },
+      "SystemControlBackgroundBaseLowBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L13"
+      },
+      "SystemControlForegroundBaseHighBrush": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L15"
+      },
+      "SystemControlForegroundBaseHighBrushPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L17"
+      },
+      "SystemControlForegroundBaseHighBrushDisabled": {
+        "color": "ForegroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L19"
+      },
+      "SystemControlForegroundBaseMediumBrush": {
+        "color": "BorderColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L21"
+      },
+      "SystemControlHighlightBaseMediumHighBrush": {
+        "color": "BorderColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L23"
+      },
+      "SystemControlDisabledBaseMediumLowBrush": {
+        "color": "ForegroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L25"
+      },
+      "SystemControlHighlightAltBaseHighBrush": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L27"
+      },
+      "SystemControlHighlightBaseHighBrush": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L29"
+      },
+      "MenuFlyoutPresenterBackground": {
+        "color": "BackgroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L31"
+      },
+      "MenuFlyoutItemBackground": {
+        "color": "BackgroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L33"
+      },
+      "MenuFlyoutItemBackgroundPointerOver": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L35"
+      },
+      "MenuFlyoutItemBackgroundDisabled": {
+        "color": "BackgroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L37"
+      },
+      "MenuFlyoutItemForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L39"
+      },
+      "MenuFlyoutItemForegroundPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L41"
+      },
+      "MenuFlyoutItemForegroundDisabled": {
+        "color": "ForegroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L43"
+      },
+      "SystemControlBackgroundAltMediumLowBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L46"
+      },
+      "SystemControlPageBackgroundAltMediumBrush": {
+        "color": "BackgroundColorPressed",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L49"
+      },
+      "SystemControlTransientBackgroundBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L52"
+      },
+      "SystemControlHighlightListLowBrush": {
+        "color": "ForegroundColorPressed",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L55"
+      },
+      "SystemControlDisabledChromeDisabledLowBrush": {
+        "color": "ForegroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L58"
+      },
+      "TextControlBackgroundDisabled": {
+        "color": "BackgroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L61"
+      },
+      "SystemControlBackgroundChromeMediumLowBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L63"
+      },
+      "DataGridColumnHeaderBackgroundBrush": {
+        "color": "BackgroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L65"
+      },
+      "DataGridColumnHeaderForegroundBrush": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L67"
+      },
+      "DataGridScrollBarsSeparatorBackground": {
+        "color": "BackgroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L69"
+      },
+      "ButtonBackgroundPointerOver": {
+        "color": "ForegroundColorPressed",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L72"
+      },
+      "ButtonBackgroundDisabled": {
+        "color": "BackgroundColorDisabled",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L74"
+      },
+      "ButtonForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L76"
+      },
+      "ButtonForegroundPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L78"
+      },
+      "ToggleButtonForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L80"
+      },
+      "ToggleButtonForegroundPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L82"
+      },
+      "ComboBoxForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L84"
+      },
+      "ComboBoxBorderBrush": {
+        "color": "BorderColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L86"
+      },
+      "ComboBoxBorderBrushPointerOver": {
+        "color": "BorderColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L88"
+      },
+      "ComboBoxItemForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L90"
+      },
+      "ComboBoxItemForegroundPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L92"
+      },
+      "ToggleSwitchContentForeground": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L94"
+      },
+      "ToggleSwitchStrokeOff": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L96"
+      },
+      "ToggleSwitchStrokeOffPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L98"
+      },
+      "ToggleSwitchKnobFillOff": {
+        "color": "ForegroundColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L100"
+      },
+      "ToggleSwitchKnobFillOffPointerOver": {
+        "color": "ForegroundColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L102"
+      },
+      "MenuFlyoutPresenterBorderBrush": {
+        "color": "BorderColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L104"
+      },
+      "TickLineBrush": {
+        "color": "TickLineColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L107"
+      },
+      "TickLineBrushLow": {
+        "color": "TickLineColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L109"
+      },
+      "BarNumberBrush": {
+        "color": "BarNumberColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L111"
+      },
+      "FinalPitchBrush": {
+        "color": "FinalPitchColor",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L113"
+      },
+      "RealCurveStrokeBrush": {
+        "color": "AccentColor1",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L115"
+      },
+      "RealCurveFillBrush": {
+        "color": "AccentColor1",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L117"
+      },
+      "TrackBackgroundAltBrush": {
+        "color": "TrackBackgroundAltColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L121"
+      },
+      "NeutralAccentBrush": {
+        "color": "NeutralAccentColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L123"
+      },
+      "NeutralAccentBrushSemi": {
+        "color": "NeutralAccentColor",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L125"
+      },
+      "NeutralAccentBrushSemi2": {
+        "color": "NeutralAccentColor",
+        "opacity": 0.25,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L127"
+      },
+      "NeutralAccentBrushPointerOver": {
+        "color": "NeutralAccentColorPointerOver",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L129"
+      },
+      "AccentBrush1": {
+        "color": "AccentColor1",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L131"
+      },
+      "AccentBrush1Semi": {
+        "color": "AccentColor1",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L133"
+      },
+      "AccentBrush2": {
+        "color": "AccentColor2",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L135"
+      },
+      "AccentBrush2Semi": {
+        "color": "AccentColor2",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L137"
+      },
+      "AccentBrush3": {
+        "color": "AccentColor3",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L139"
+      },
+      "AccentBrush3Semi": {
+        "color": "AccentColor3",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L141"
+      },
+      "SelectedTrackAccentBrush": {
+        "color": "#4EA6EA",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L143"
+      },
+      "SelectedTrackAccentLightBrush": {
+        "color": "#90CAF9",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L145"
+      },
+      "SelectedTrackAccentLightBrushSemi": {
+        "color": "#90CAF9",
+        "opacity": 0.5,
+        "ref": "OpenUtau/Colors/Brushes.axaml#L147"
+      },
+      "SelectedTrackAccentDarkBrush": {
+        "color": "#1E88E5",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L149"
+      },
+      "SelectedTrackCenterKeyBrush": {
+        "color": "#C8E5FC",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L151"
+      },
+      "WarningBrush": {
+        "color": "WarningColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L153"
+      },
+      "WhiteKeyBrush": {
+        "color": "WhiteKeyColorLeft",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L156"
+      },
+      "WhiteKeyNameBrush": {
+        "color": "WhiteKeyNameColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L162"
+      },
+      "CenterKeyBrush": {
+        "color": "CenterKeyColorLeft",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L164"
+      },
+      "CenterKeyNameBrush": {
+        "color": "CenterKeyNameColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L170"
+      },
+      "BlackKeyBrush": {
+        "color": "BlackKeyColorLeft",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L172"
+      },
+      "BlackKeyNameBrush": {
+        "color": "BlackKeyNameColor",
+        "ref": "OpenUtau/Colors/Brushes.axaml#L178"
+      }
+    },
+    "metrics": {
+      "window": {
+        "defaultWidth": {
+          "value": 1200,
+          "ref": "OpenUtau.Core/Util/WindowSize.cs#L3"
+        },
+        "defaultHeight": {
+          "value": 650,
+          "ref": "OpenUtau.Core/Util/WindowSize.cs#L4"
+        },
+        "mainWindowMinWidth": {
+          "value": 300,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L12"
+        },
+        "mainWindowMinHeight": {
+          "value": 200,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L12"
+        },
+        "mainWindowIcon": {
+          "value": "/Assets/open-utau.ico",
+          "ref": "OpenUtau/Views/MainWindow.axaml#L11"
+        },
+        "splashWidth": {
+          "value": 400,
+          "ref": "OpenUtau/Views/SplashWindow.axaml#L5"
+        },
+        "splashHeight": {
+          "value": 180,
+          "ref": "OpenUtau/Views/SplashWindow.axaml#L5"
+        },
+        "themeEditorWidth": {
+          "value": 325,
+          "ref": "OpenUtau/Views/ThemeEditorWindow.axaml#L10"
+        },
+        "themeEditorHeight": {
+          "value": 500,
+          "ref": "OpenUtau/Views/ThemeEditorWindow.axaml#L10"
+        },
+        "themeEditorMinWidth": {
+          "value": 325,
+          "ref": "OpenUtau/Views/ThemeEditorWindow.axaml#L10"
+        }
+      },
+      "cornerRadius": {
+        "ControlCornerRadius": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L7"
+        },
+        "OverlayCornerRadius": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L8"
+        },
+        "NotificationCard": {
+          "value": 6,
+          "ref": "OpenUtau/Styles/Styles.axaml#L498"
+        },
+        "Border.playback": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L291"
+        },
+        "Border.tips": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L319"
+        },
+        "HeaderedContentControl.groupbox": {
+          "value": 3,
+          "ref": "OpenUtau/Styles/Styles.axaml#L401"
+        },
+        "Slider.fader.thumb": {
+          "value": 2,
+          "ref": "OpenUtau/Styles/Styles.axaml#L463"
+        },
+        "ColorPicker.TextBox": {
+          "value": "0,4,4,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L491"
+        }
+      },
+      "fonts": {
+        "uiFontFamily": {
+          "value": "Segoe UI,San Francisco,Helvetica Neue",
+          "ref": "OpenUtau/Strings/Strings.axaml#L1026"
+        },
+        "uiFontFamilyZhCN": {
+          "value": "Microsoft YaHei UI,PingFang SC,Segoe UI,San Francisco,Helvetica Neue",
+          "ref": "OpenUtau/Strings/Strings.zh-CN.axaml#L912"
+        },
+        "uiFontFamilyJaJP": {
+          "value": "Meiryo UI,Hiragino Sans,Segoe UI,San Francisco,Helvetica Neue",
+          "ref": "OpenUtau/Strings/Strings.ja-JP.axaml#L848"
+        },
+        "uiFontFamilyThTH": {
+          "value": "Noto serif Thai,Angsana New,Noto Sans Thai,IBM Plex Sans Thai,Segoe UI,San Francisco,Helvetica Neue",
+          "ref": "OpenUtau/Strings/Strings.th-TH.axaml#L849"
+        },
+        "monoFontFamilyYamlEditor": {
+          "value": "Cascadia Mono,Consolas,Menlo,DejaVu Sans Mono,monospace",
+          "ref": "OpenUtau/Controls/YamlEditor.axaml#L11"
+        },
+        "playbackClockFontFamily": {
+          "value": "Monospace",
+          "ref": "OpenUtau/Styles/Styles.axaml#L299"
+        },
+        "baseFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L81"
+        },
+        "menuItemFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L23"
+        },
+        "contextMenuItemFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L60"
+        },
+        "textBoxFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L90"
+        },
+        "buttonFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L101"
+        },
+        "toggleButtonSwitchFontSize": {
+          "value": 13,
+          "ref": "OpenUtau/Styles/Styles.axaml#L207"
+        },
+        "comboBoxFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L218"
+        },
+        "comboBoxItemFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L225"
+        },
+        "listBoxToolbarFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L36"
+        },
+        "tabItemFontSize": {
+          "value": 13,
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L122"
+        },
+        "dataGridFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L274"
+        },
+        "playbackClockFontSize": {
+          "value": 11,
+          "ref": "OpenUtau/Styles/Styles.axaml#L298"
+        },
+        "radioButtonFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L208"
+        },
+        "welcomeTitleFontSize": {
+          "value": 20,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L100"
+        },
+        "welcomeButtonTitleFontSize": {
+          "value": 14,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L122"
+        },
+        "trackHeaderVolumePanFontSize": {
+          "value": 9,
+          "ref": "OpenUtau/Controls/TrackHeader.axaml#L209"
+        },
+        "pianoRollRulerFontSize": {
+          "value": 10,
+          "ref": "OpenUtau/Controls/PianoRoll.axaml#L524"
+        },
+        "expanderHeaderFontWeight": {
+          "value": "Bold",
+          "ref": "OpenUtau/Styles/Styles.axaml#L479"
+        }
+      },
+      "button": {
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L102"
+        },
+        "margin": {
+          "value": "0,4",
+          "ref": "OpenUtau/Styles/Styles.axaml#L103"
+        },
+        "padding": {
+          "value": "4,0,4,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L104"
+        },
+        "borderThickness": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L100"
+        },
+        "horizontalContentAlignment": {
+          "value": "Center",
+          "ref": "OpenUtau/Styles/Styles.axaml#L105"
+        },
+        "verticalContentAlignment": {
+          "value": "Center",
+          "ref": "OpenUtau/Styles/Styles.axaml#L106"
+        }
+      },
+      "toggleButton": {
+        "normal.background": {
+          "value": "{DynamicResource SystemControlBackgroundAltHighBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L147"
+        },
+        "normal.pointerOverBackground": {
+          "value": "{DynamicResource NeutralAccentBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L151"
+        },
+        "normal.pressedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushPointerOver}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L154"
+        },
+        "normal.checkedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L157"
+        },
+        "toolbar.borderThickness": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L168"
+        },
+        "switch.fontSize": {
+          "value": 13,
+          "ref": "OpenUtau/Styles/Styles.axaml#L207"
+        },
+        "switch.padding": {
+          "value": "6,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L208"
+        },
+        "switch.borderThickness": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L209"
+        }
+      },
+      "textBox": {
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L87"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L88"
+        },
+        "padding": {
+          "value": "4,1",
+          "ref": "OpenUtau/Styles/Styles.axaml#L89"
+        },
+        "margin": {
+          "value": "0,0,0,4",
+          "ref": "OpenUtau/Styles/Styles.axaml#L90"
+        },
+        "fontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L91"
+        },
+        "verticalAlignment": {
+          "value": "Top",
+          "ref": "OpenUtau/Styles/Styles.axaml#L92"
+        },
+        "selectionForegroundBrush": {
+          "value": "White",
+          "ref": "OpenUtau/Styles/Styles.axaml#L93"
+        },
+        "disabledForeground": {
+          "value": "{DynamicResource TextControlForegroundDisabled}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L96"
+        },
+        "focusBorderBrush": {
+          "value": "{DynamicResource SelectedTrackAccentBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L191"
+        },
+        "colorPickerTextBoxCornerRadius": {
+          "value": "0,4,4,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L491"
+        },
+        "colorPickerTextBoxHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/Styles.axaml#L492"
+        },
+        "colorPickerTextBoxPadding": {
+          "value": 5,
+          "ref": "OpenUtau/Styles/Styles.axaml#L493"
+        }
+      },
+      "comboBox": {
+        "background": {
+          "value": "{DynamicResource SystemRegionBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L217"
+        },
+        "fontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L218"
+        },
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L219"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L220"
+        },
+        "margin": {
+          "value": "0,4",
+          "ref": "OpenUtau/Styles/Styles.axaml#L221"
+        },
+        "padding": {
+          "value": "4,0,0,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L222"
+        },
+        "borderBrush": {
+          "value": "{DynamicResource BorderColor} (ComboBoxBorderBrush)",
+          "ref": "OpenUtau/Colors/Brushes.axaml#L86"
+        },
+        "dropDownGlyphFill": {
+          "value": "{DynamicResource SystemControlForegroundBaseHighBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L232"
+        }
+      },
+      "comboBoxItem": {
+        "fontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L225"
+        },
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L226"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L227"
+        },
+        "margin": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L228"
+        },
+        "padding": {
+          "value": "4,2,0,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L229"
+        },
+        "selectedBackground": {
+          "value": "{DynamicResource SelectedTrackAccentLightBrushSemi}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L32"
+        }
+      },
+      "listBoxItem": {
+        "minHeight": {
+          "value": 24,
+          "ref": "OpenUtau/Styles/Styles.axaml#L236"
+        },
+        "height": {
+          "value": 24,
+          "ref": "OpenUtau/Styles/Styles.axaml#L237"
+        },
+        "padding": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L238"
+        },
+        "margin": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L239"
+        },
+        "selectedBackground": {
+          "value": "{DynamicResource SelectedTrackAccentLightBrushSemi}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L41"
+        }
+      },
+      "listBoxToolbarItem": {
+        "borderThickness": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L45"
+        },
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L46"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L47"
+        },
+        "width": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L48"
+        },
+        "padding": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L49"
+        },
+        "background": {
+          "value": "{DynamicResource SystemControlBackgroundAltHighBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L50"
+        },
+        "pointerOverBackground": {
+          "value": "{DynamicResource NeutralAccentBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L54"
+        },
+        "pressedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushPointerOver}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L57"
+        },
+        "selectedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L60"
+        },
+        "iconGridSize": {
+          "value": "18x18",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L91"
+        },
+        "iconScale": {
+          "value": "0.55",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L94"
+        }
+      },
+      "checkBox": {
+        "minHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L243"
+        },
+        "minWidth": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L244"
+        },
+        "templateGridHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L247"
+        },
+        "templateGridWidth": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L248"
+        },
+        "checkedBackground": {
+          "value": "{DynamicResource SelectedTrackAccentBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L9"
+        },
+        "checkedPointerOverBackground": {
+          "value": "{DynamicResource SelectedTrackAccentLightBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L13"
+        },
+        "checkedPressedBackground": {
+          "value": "{DynamicResource SelectedTrackAccentDarkBrush}",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L17"
+        }
+      },
+      "menu": {
+        "height": {
+          "value": 24,
+          "ref": "OpenUtau/Styles/Styles.axaml#L19"
+        },
+        "menuItemHeight": {
+          "value": 24,
+          "ref": "OpenUtau/Styles/Styles.axaml#L24"
+        },
+        "menuItemPadding": {
+          "value": "8,2,8,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L25"
+        },
+        "menuItemBackground": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L22"
+        },
+        "contextMenuItemPadding": {
+          "value": "4,2,4,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L61"
+        },
+        "separatorBackground": {
+          "value": "{DynamicResource SystemControlHighlightBaseMediumHighBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L44"
+        },
+        "separatorMargin": {
+          "value": "2,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L46"
+        },
+        "separatorHeight": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/Styles.axaml#L47"
+        },
+        "flyoutMinHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L9"
+        },
+        "flyoutScrollerMargin": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L10"
+        },
+        "comboBoxDropdownContentMargin": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/Styles.axaml#L11"
+        },
+        "chevronScale": {
+          "value": "Scale(0.75,0.75)",
+          "ref": "OpenUtau/Styles/Styles.axaml#L28"
+        }
+      },
+      "progressBar": {
+        "background": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L286"
+        },
+        "foreground": {
+          "value": "{DynamicResource AccentBrush1}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L287"
+        }
+      },
+      "scrollBarMusic": {
+        "trackRectExpandedFill": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L331"
+        },
+        "thumbExpandedBackground": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L334"
+        },
+        "thumbExpandedPointerOverBackground": {
+          "value": "{DynamicResource NeutralAccentBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L337"
+        },
+        "lineButtonBackground": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L340"
+        },
+        "arrowPathSize": {
+          "value": "24x24",
+          "ref": "OpenUtau/Styles/Styles.axaml#L366"
+        },
+        "arrowFill": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L367"
+        },
+        "arrowPointerOverFill": {
+          "value": "{DynamicResource NeutralAccentBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L372"
+        }
+      },
+      "sliderFader": {
+        "focusable": {
+          "value": false,
+          "ref": "OpenUtau/Styles/Styles.axaml#L411"
+        },
+        "foreground": {
+          "value": "{DynamicResource AccentBrush1}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L412"
+        },
+        "thumbTemplateSize": {
+          "value": "16x6",
+          "ref": "OpenUtau/Styles/Styles.axaml#L463"
+        },
+        "thumbCornerRadius": {
+          "value": 2,
+          "ref": "OpenUtau/Styles/Styles.axaml#L463"
+        },
+        "pointerOverForeground": {
+          "value": "{DynamicResource AccentBrush1}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L457"
+        }
+      },
+      "expander": {
+        "margin": {
+          "value": "4,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L470"
+        },
+        "padding": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L471"
+        },
+        "isExpandedDefault": {
+          "value": true,
+          "ref": "OpenUtau/Styles/Styles.axaml#L472"
+        },
+        "minHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/Styles.axaml#L473"
+        },
+        "background": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L474"
+        },
+        "headerHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/Styles.axaml#L478"
+        },
+        "headerMinHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/Styles.axaml#L479"
+        },
+        "headerFontWeight": {
+          "value": "Bold",
+          "ref": "OpenUtau/Styles/Styles.axaml#L479"
+        },
+        "chevronBorderHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L482"
+        },
+        "headerContentMargin": {
+          "value": "7,0,0,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L485"
+        }
+      },
+      "borderPlayback": {
+        "cornerRadius": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L291"
+        },
+        "borderThickness": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/Styles.axaml#L292"
+        },
+        "borderBrush": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L293"
+        },
+        "height": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L294"
+        },
+        "textBlockPadding": {
+          "value": "6,0,0,1",
+          "ref": "OpenUtau/Styles/Styles.axaml#L297"
+        },
+        "textBlockFontSize": {
+          "value": 11,
+          "ref": "OpenUtau/Styles/Styles.axaml#L298"
+        },
+        "buttonWidth": {
+          "value": 21,
+          "ref": "OpenUtau/Styles/Styles.axaml#L310"
+        },
+        "buttonHeight": {
+          "value": 19,
+          "ref": "OpenUtau/Styles/Styles.axaml#L311"
+        },
+        "buttonBackground": {
+          "value": "Transparent",
+          "ref": "OpenUtau/Styles/Styles.axaml#L312"
+        }
+      },
+      "borderTips": {
+        "cornerRadius": {
+          "value": 4,
+          "ref": "OpenUtau/Styles/Styles.axaml#L319"
+        },
+        "background": {
+          "value": "{DynamicResource SystemControlBackgroundAltHighBrush}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L320"
+        },
+        "borderBrush": {
+          "value": "{DynamicResource NeutralAccentBrushSemi}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L321"
+        },
+        "borderThickness": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/Styles.axaml#L322"
+        },
+        "padding": {
+          "value": 2,
+          "ref": "OpenUtau/Styles/Styles.axaml#L323"
+        },
+        "textLineHeight": {
+          "value": 18,
+          "ref": "OpenUtau/Styles/Styles.axaml#L327"
+        }
+      },
+      "groupBox": {
+        "margin": {
+          "value": 5,
+          "ref": "OpenUtau/Styles/Styles.axaml#L381"
+        },
+        "borderThickness": {
+          "value": 1,
+          "ref": "OpenUtau/Styles/Styles.axaml#L400"
+        },
+        "cornerRadius": {
+          "value": 3,
+          "ref": "OpenUtau/Styles/Styles.axaml#L401"
+        },
+        "headerBorderPadding": {
+          "value": "2,0,2,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L396"
+        },
+        "headerBorderMargin": {
+          "value": "5,0,0,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L396"
+        },
+        "contentPadding": {
+          "value": "12,12,12,8",
+          "ref": "OpenUtau/Styles/Styles.axaml#L399"
+        },
+        "contentMargin": {
+          "value": "0,8,0,0",
+          "ref": "OpenUtau/Styles/Styles.axaml#L399"
+        }
+      },
+      "notificationCard": {
+        "cornerRadius": {
+          "value": 6,
+          "ref": "OpenUtau/Styles/Styles.axaml#L498"
+        },
+        "boxShadow": {
+          "value": "0 4 12 0 #20000000",
+          "ref": "OpenUtau/Styles/Styles.axaml#L504"
+        },
+        "accentBarWidth": {
+          "value": 6,
+          "ref": "OpenUtau/Styles/Styles.axaml#L513"
+        },
+        "contentMargin": {
+          "value": "14,10",
+          "ref": "OpenUtau/Styles/Styles.axaml#L519"
+        }
+      },
+      "dataGrid": {
+        "columnHeaderFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L274"
+        },
+        "columnHeaderMinHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L275"
+        },
+        "cellFontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/Styles.axaml#L278"
+        },
+        "cellMinHeight": {
+          "value": 20,
+          "ref": "OpenUtau/Styles/Styles.axaml#L279"
+        }
+      },
+      "toggleSwitch": {
+        "checkedKnobBackground": {
+          "value": "{DynamicResource AccentBrush1}",
+          "ref": "OpenUtau/Styles/Styles.axaml#L213"
+        }
+      },
+      "tabItem": {
+        "fontSize": {
+          "value": 13,
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L122"
+        },
+        "minHeight": {
+          "value": 28,
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L123"
+        },
+        "padding": {
+          "value": "10,2",
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L124"
+        }
+      },
+      "radioButton": {
+        "padding": {
+          "value": 0,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L207"
+        },
+        "fontSize": {
+          "value": 12,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L208"
+        },
+        "outerEllipseSize": {
+          "value": "14x14",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L220-L223"
+        },
+        "checkGlyphSize": {
+          "value": "7x7",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L241-L242"
+        },
+        "templateGridColumns": {
+          "value": "20,*",
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L218"
+        },
+        "templateGridHeight": {
+          "value": 32,
+          "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L219"
+        }
+      },
+      "spacing": {
+        "trackHeaderWidth": {
+          "value": 300,
+          "ref": "OpenUtau/Controls/TrackHeader.axaml#L7"
+        },
+        "trackHeaderHeight": {
+          "value": 104,
+          "ref": "OpenUtau/Controls/TrackHeader.axaml#L7"
+        },
+        "groupboxMargin": {
+          "value": 5,
+          "ref": "OpenUtau/Styles/Styles.axaml#L381"
+        },
+        "expanderMargin": {
+          "value": "4,2",
+          "ref": "OpenUtau/Styles/Styles.axaml#L470"
+        },
+        "windowContentMarginWelcome": {
+          "value": "60,50,60,40",
+          "ref": "OpenUtau/Views/MainWindow.axaml#L91"
+        },
+        "playbackBorderMargin": {
+          "value": "4,0",
+          "ref": "OpenUtau/Views/MainWindow.axaml#L277"
+        },
+        "playbackBorderWidthTime": {
+          "value": 72,
+          "ref": "OpenUtau/Views/MainWindow.axaml#L277"
+        },
+        "gridSplitterHeight": {
+          "value": 10,
+          "ref": "OpenUtau/Views/SingersDialog.axaml#L117"
+        }
+      },
+      "viewConstants": {
+        "trackHeightMax": {
+          "value": 144,
+          "ref": "OpenUtau/ViewConstants.cs#L15"
+        },
+        "trackHeightMin": {
+          "value": 44,
+          "ref": "OpenUtau/ViewConstants.cs#L16"
+        },
+        "trackHeightDefault": {
+          "value": 104,
+          "ref": "OpenUtau/ViewConstants.cs#L17"
+        },
+        "trackHeightDelta": {
+          "value": 20,
+          "ref": "OpenUtau/ViewConstants.cs#L18"
+        },
+        "pianoRollMinHeight": {
+          "value": 24,
+          "ref": "OpenUtau/ViewConstants.cs#L23"
+        },
+        "noteHeightMax": {
+          "value": 128,
+          "ref": "OpenUtau/ViewConstants.cs#L25"
+        },
+        "noteHeightMin": {
+          "value": 8,
+          "ref": "OpenUtau/ViewConstants.cs#L26"
+        },
+        "noteHeightDefault": {
+          "value": 22,
+          "ref": "OpenUtau/ViewConstants.cs#L27"
+        },
+        "resizeMargin": {
+          "value": 8,
+          "ref": "OpenUtau/ViewConstants.cs#L33"
+        },
+        "expHeightMin": {
+          "value": 132,
+          "ref": "OpenUtau/ViewConstants.cs#L51"
+        },
+        "expHeightMax": {
+          "value": 600,
+          "ref": "OpenUtau/ViewConstants.cs#L52"
+        }
+      }
+    },
+    "fonts": {
+      "uiFontFamily": {
+        "value": "Segoe UI,San Francisco,Helvetica Neue",
+        "ref": "OpenUtau/Strings/Strings.axaml#L1026"
+      },
+      "uiFontFamilyZhCN": {
+        "value": "Microsoft YaHei UI,PingFang SC,Segoe UI,San Francisco,Helvetica Neue",
+        "ref": "OpenUtau/Strings/Strings.zh-CN.axaml#L912"
+      },
+      "uiFontFamilyJaJP": {
+        "value": "Meiryo UI,Hiragino Sans,Segoe UI,San Francisco,Helvetica Neue",
+        "ref": "OpenUtau/Strings/Strings.ja-JP.axaml#L848"
+      },
+      "uiFontFamilyThTH": {
+        "value": "Noto serif Thai,Angsana New,Noto Sans Thai,IBM Plex Sans Thai,Segoe UI,San Francisco,Helvetica Neue",
+        "ref": "OpenUtau/Strings/Strings.th-TH.axaml#L849"
+      },
+      "monoFontFamilyYamlEditor": {
+        "value": "Cascadia Mono,Consolas,Menlo,DejaVu Sans Mono,monospace",
+        "ref": "OpenUtau/Controls/YamlEditor.axaml#L11"
+      },
+      "playbackClockFontFamily": {
+        "value": "Monospace",
+        "ref": "OpenUtau/Styles/Styles.axaml#L299"
+      },
+      "baseFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L81"
+      },
+      "menuItemFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L23"
+      },
+      "contextMenuItemFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L60"
+      },
+      "textBoxFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L90"
+      },
+      "buttonFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L101"
+      },
+      "toggleButtonSwitchFontSize": {
+        "value": 13,
+        "ref": "OpenUtau/Styles/Styles.axaml#L207"
+      },
+      "comboBoxFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L218"
+      },
+      "comboBoxItemFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L225"
+      },
+      "listBoxToolbarFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L36"
+      },
+      "tabItemFontSize": {
+        "value": 13,
+        "ref": "OpenUtau/Views/SingersDialog.axaml#L122"
+      },
+      "dataGridFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/Styles.axaml#L274"
+      },
+      "playbackClockFontSize": {
+        "value": 11,
+        "ref": "OpenUtau/Styles/Styles.axaml#L298"
+      },
+      "radioButtonFontSize": {
+        "value": 12,
+        "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L208"
+      },
+      "welcomeTitleFontSize": {
+        "value": 20,
+        "ref": "OpenUtau/Views/MainWindow.axaml#L100"
+      },
+      "welcomeButtonTitleFontSize": {
+        "value": 14,
+        "ref": "OpenUtau/Views/MainWindow.axaml#L122"
+      },
+      "trackHeaderVolumePanFontSize": {
+        "value": 9,
+        "ref": "OpenUtau/Controls/TrackHeader.axaml#L209"
+      },
+      "pianoRollRulerFontSize": {
+        "value": 10,
+        "ref": "OpenUtau/Controls/PianoRoll.axaml#L524"
+      },
+      "expanderHeaderFontWeight": {
+        "value": "Bold",
+        "ref": "OpenUtau/Styles/Styles.axaml#L479"
+      }
+    }
+  },
+  "customThemeDefaults": {
+    "note": "OpenUtau/Colors/CustomTheme.axaml is the built-in default custom theme; it is a copy of LightTheme except it has NO WarningColor key. The ThemeYaml defaults in CustomTheme.axaml.cs match it.",
+    "refs": {
+      "file": "OpenUtau/Colors/CustomTheme.axaml#L1-L49",
+      "class": "OpenUtau/Colors/CustomTheme.axaml.cs#L123-L167"
+    }
+  },
+  "trackColors": [
+    {
+      "name": "Pink",
+      "accent": "#F06292",
+      "pressedDark": "#EC407A",
+      "pointerOverLight": "#F48FB1",
+      "centerKey": "#FAC7D8",
+      "ref": "OpenUtau/ThemeManager.cs#L60"
+    },
+    {
+      "name": "Red",
+      "accent": "#EF5350",
+      "pressedDark": "#E53935",
+      "pointerOverLight": "#E57373",
+      "centerKey": "#F2B9B9",
+      "ref": "OpenUtau/ThemeManager.cs#L61"
+    },
+    {
+      "name": "Orange",
+      "accent": "#FF8A65",
+      "pressedDark": "#FF7043",
+      "pointerOverLight": "#FFAB91",
+      "centerKey": "#FFD5C8",
+      "ref": "OpenUtau/ThemeManager.cs#L62"
+    },
+    {
+      "name": "Yellow",
+      "accent": "#FBC02D",
+      "pressedDark": "#F9A825",
+      "pointerOverLight": "#FDD835",
+      "centerKey": "#FEF1B6",
+      "ref": "OpenUtau/ThemeManager.cs#L63"
+    },
+    {
+      "name": "Light Green",
+      "accent": "#CDDC39",
+      "pressedDark": "#C0CA33",
+      "pointerOverLight": "#DCE775",
+      "centerKey": "#F2F7CE",
+      "ref": "OpenUtau/ThemeManager.cs#L64"
+    },
+    {
+      "name": "Green",
+      "accent": "#66BB6A",
+      "pressedDark": "#43A047",
+      "pointerOverLight": "#A5D6A7",
+      "centerKey": "#D2EBD3",
+      "ref": "OpenUtau/ThemeManager.cs#L65"
+    },
+    {
+      "name": "Light Blue",
+      "accent": "#4FC3F7",
+      "pressedDark": "#29B6F6",
+      "pointerOverLight": "#81D4FA",
+      "centerKey": "#C0EAFD",
+      "ref": "OpenUtau/ThemeManager.cs#L66"
+    },
+    {
+      "name": "Blue",
+      "accent": "#4EA6EA",
+      "pressedDark": "#1E88E5",
+      "pointerOverLight": "#90CAF9",
+      "centerKey": "#C8E5FC",
+      "ref": "OpenUtau/ThemeManager.cs#L67"
+    },
+    {
+      "name": "Purple",
+      "accent": "#BA68C8",
+      "pressedDark": "#AB47BC",
+      "pointerOverLight": "#CE93D8",
+      "centerKey": "#E7C9EC",
+      "ref": "OpenUtau/ThemeManager.cs#L68"
+    },
+    {
+      "name": "Pink2",
+      "accent": "#E91E63",
+      "pressedDark": "#C2185B",
+      "pointerOverLight": "#F06292",
+      "centerKey": "#F8B1C9",
+      "ref": "OpenUtau/ThemeManager.cs#L69"
+    },
+    {
+      "name": "Red2",
+      "accent": "#D32F2F",
+      "pressedDark": "#B71C1C",
+      "pointerOverLight": "#EF5350",
+      "centerKey": "#F7A9A8",
+      "ref": "OpenUtau/ThemeManager.cs#L70"
+    },
+    {
+      "name": "Orange2",
+      "accent": "#FF5722",
+      "pressedDark": "#E64A19",
+      "pointerOverLight": "#FF7043",
+      "centerKey": "#FFB8A1",
+      "ref": "OpenUtau/ThemeManager.cs#L71"
+    },
+    {
+      "name": "Yellow2",
+      "accent": "#FF8F00",
+      "pressedDark": "#FF7F00",
+      "pointerOverLight": "#FFB300",
+      "centerKey": "#FFE097",
+      "ref": "OpenUtau/ThemeManager.cs#L72"
+    },
+    {
+      "name": "Light Green2",
+      "accent": "#AFB42B",
+      "pressedDark": "#9E9D24",
+      "pointerOverLight": "#CDDC39",
+      "centerKey": "#E6EE9C",
+      "ref": "OpenUtau/ThemeManager.cs#L73"
+    },
+    {
+      "name": "Green2",
+      "accent": "#2E7D32",
+      "pressedDark": "#1B5E20",
+      "pointerOverLight": "#43A047",
+      "centerKey": "#A1D0A3",
+      "ref": "OpenUtau/ThemeManager.cs#L74"
+    },
+    {
+      "name": "Light Blue2",
+      "accent": "#1976D2",
+      "pressedDark": "#0D47A1",
+      "pointerOverLight": "#2196F3",
+      "centerKey": "#90CBF9",
+      "ref": "OpenUtau/ThemeManager.cs#L75"
+    },
+    {
+      "name": "Blue2",
+      "accent": "#3949AB",
+      "pressedDark": "#283593",
+      "pointerOverLight": "#5C6BC0",
+      "centerKey": "#AEB5E0",
+      "ref": "OpenUtau/ThemeManager.cs#L76"
+    },
+    {
+      "name": "Purple2",
+      "accent": "#7B1FA2",
+      "pressedDark": "#4A148C",
+      "pointerOverLight": "#AB47BC",
+      "centerKey": "#D5A3DE",
+      "ref": "OpenUtau/ThemeManager.cs#L77"
+    }
+  ],
+  "icons": {
+    "renderingApproach": "Vector: every UI icon is an inline Avalonia <Path Data=\"...\"> geometry (SVG path mini-language). There are no per-icon .svg/.png files in the source tree; only the app icon / logos exist as image assets.",
+    "bitmapAndLogoAssets": [
+      {
+        "path": "OpenUtau/Assets/open-utau.ico",
+        "usage": "Window Icon (referenced by every Window via Icon=\"/Assets/open-utau.ico\")"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUtau.png",
+        "usage": "raster app icon"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUtau.icns",
+        "usage": "macOS app icon"
+      },
+      {
+        "path": "OpenUtau/Assets/logotype.png",
+        "usage": "SplashWindow light logo (height 16)"
+      },
+      {
+        "path": "OpenUtau/Assets/logotype-w.png",
+        "usage": "SplashWindow dark logo (height 16)"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUtau.desktop",
+        "usage": "Linux desktop entry"
+      },
+      {
+        "path": "OpenUtau/Assets/AppRun",
+        "usage": "Linux AppImage launcher"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUTAU.icon/icon.json",
+        "usage": "Xcode .icon bundle descriptor"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUTAU.icon/Assets/Artboard 1 4.svg",
+        "usage": "macOS icon layer"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUTAU.icon/Assets/Artboard 1 6.svg",
+        "usage": "macOS icon layer"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUTAU.icon/Assets/Artboard 1 7.svg",
+        "usage": "macOS icon layer"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUTAU.icon/Assets/Artboard 1 8.svg",
+        "usage": "macOS icon layer"
+      },
+      {
+        "path": "OpenUtau/Assets/OpenUTAU.icon/Assets/Artboard 1 9.svg",
+        "usage": "macOS icon layer"
+      },
+      {
+        "path": "Logo/openutau.svg",
+        "usage": "project logo source"
+      },
+      {
+        "path": "Logo/openutau_logotype.svg",
+        "usage": "project logotype source"
+      }
+    ],
+    "inlineIconLocations": [
+      {
+        "area": "Search bar",
+        "file": "OpenUtau/Controls/SearchBar.axaml",
+        "ref": "OpenUtau/Controls/SearchBar.axaml#L26",
+        "icons": [
+          "arrow-left",
+          "arrow-right",
+          "new-folder",
+          "close"
+        ],
+        "provenance": "https://github.com/microsoft/vscode-icons (comments at L25/L42/L59/L76)"
+      },
+      {
+        "area": "Welcome page",
+        "file": "OpenUtau/Views/MainWindow.axaml",
+        "ref": "OpenUtau/Views/MainWindow.axaml#L110",
+        "icons": [
+          "new-file (L110)",
+          "go-to-file (L143)"
+        ]
+      },
+      {
+        "area": "Transport / playback toolbar",
+        "file": "OpenUtau/Views/MainWindow.axaml",
+        "ref": "OpenUtau/Views/MainWindow.axaml#L250-L272",
+        "icons": [
+          "seek-start",
+          "play",
+          "pause",
+          "seek-end",
+          "loop",
+          "metronome"
+        ],
+        "sizes": "18x18"
+      },
+      {
+        "area": "Track header",
+        "file": "OpenUtau/Controls/TrackHeader.axaml",
+        "ref": "OpenUtau/Controls/TrackHeader.axaml#L154-L240",
+        "icons": [
+          "singer/avatar (L154)",
+          "mute (L166)",
+          "solo (L180)",
+          "clear (L193)",
+          "render/play (L240)"
+        ]
+      },
+      {
+        "area": "Track adder",
+        "file": "OpenUtau/Controls/TrackAdder.axaml",
+        "ref": "OpenUtau/Controls/TrackAdder.axaml#L10",
+        "icons": [
+          "add-track"
+        ]
+      },
+      {
+        "area": "Piano roll panel",
+        "file": "OpenUtau/Controls/PianoRoll.axaml",
+        "ref": "OpenUtau/Controls/PianoRoll.axaml#L423-L592",
+        "icons": [
+          "gear/settings, snap, lock, expression toggles, zoom, etc. (filled/stroked classes)"
+        ]
+      },
+      {
+        "area": "Singer flyout",
+        "file": "OpenUtau/Controls/SingerFlyout.axaml",
+        "ref": "OpenUtau/Controls/SingerFlyout.axaml#L145-L226",
+        "icons": [
+          "tile arrows / favourites"
+        ]
+      },
+      {
+        "area": "Preferences dialog",
+        "file": "OpenUtau/Views/PreferencesDialog.axaml",
+        "ref": "OpenUtau/Views/PreferencesDialog.axaml#L283-L304",
+        "icons": [
+          "folder pickers / checkmarks"
+        ]
+      },
+      {
+        "area": "Singers dialog",
+        "file": "OpenUtau/Views/SingersDialog.axaml",
+        "ref": "OpenUtau/Views/SingersDialog.axaml#L60-L237",
+        "icons": [
+          "search, avatar, checkbox"
+        ]
+      },
+      {
+        "area": "Piano-roll tool palette",
+        "file": "OpenUtau/Styles/PianoRollStyles.axaml",
+        "ref": "OpenUtau/Styles/PianoRollStyles.axaml#L122-L166",
+        "icons": [
+          "cursorTool",
+          "verticalStretchTool",
+          "horizontalStretchTool",
+          "verticalShiftTool",
+          "horizontalShiftTool",
+          "penTool",
+          "penPlusTool",
+          "eraserTool",
+          "pitchPointTool",
+          "drawPitchTool",
+          "pitchLineTool",
+          "knifeTool",
+          "pitchSCurveTool",
+          "pitchSineWaveTool",
+          "pitchSmoothenTool"
+        ],
+        "note": "Listed via Style Selector ListBoxItem.<name>Tool /template/ Path#PART_ToolIcon; each geometry is an inline Data= string."
+      },
+      {
+        "area": "Menu checkmark",
+        "file": "OpenUtau/Styles/Styles.axaml",
+        "ref": "OpenUtau/Styles/Styles.axaml#L70-L78",
+        "icons": [
+          "Path.checkmenu Data=\"M1,5 L4,8 L9,1\" stroke thickness 2, 12x12"
+        ]
+      },
+      {
+        "area": "ScrollBar arrows",
+        "file": "OpenUtau/Styles/Styles.axaml",
+        "ref": "OpenUtau/Styles/Styles.axaml#L348-L359",
+        "icons": [
+          "music scrollbar up/down/left/right arrow triangles"
+        ]
+      }
+    ]
+  },
+  "fileRefs": {
+    "dark.colors": "OpenUtau/Colors/DarkTheme.axaml#L6-L49",
+    "light.colors": "OpenUtau/Colors/LightTheme.axaml#L6-L49",
+    "dark.WarningColor": "OpenUtau/Colors/DarkTheme.axaml#L36",
+    "light.WarningColor": "OpenUtau/Colors/LightTheme.axaml#L36",
+    "brushes.mapping": "OpenUtau/Colors/Brushes.axaml#L1-L180",
+    "styles.main": "OpenUtau/Styles/Styles.axaml#L1-L537",
+    "styles.pianoRoll": "OpenUtau/Styles/PianoRollStyles.axaml#L1-L278",
+    "fonts.ui": "OpenUtau/Strings/Strings.axaml#L1026",
+    "window.defaultSize": "OpenUtau.Core/Util/WindowSize.cs#L3-L4",
+    "mainWindow": "OpenUtau/Views/MainWindow.axaml#L1-L440",
+    "viewConstants": "OpenUtau/ViewConstants.cs#L1-L52",
+    "trackColors": "OpenUtau/ThemeManager.cs#L59-L78",
+    "themeManager": "OpenUtau/ThemeManager.cs#L1-L318"
+  }
+}

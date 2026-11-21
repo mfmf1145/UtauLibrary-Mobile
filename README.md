@@ -268,4 +268,3 @@ MediaFire、Dropbox、MEGA、Google Drive 等境外网盘会拒绝直连，需�
 第三方组件清单见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 本项目为第三方社区工具，与 OpenUtau 及 OpenUtau Mobile 项目无从属、授权或背书关系。
-

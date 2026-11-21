@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.UtauMarket" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/ou_window_background</item>
+        <item name="android:colorBackground">@color/ou_window_background</item>
+        <item name="android:statusBarColor">@color/ou_window_background</item>
+        <item name="android:navigationBarColor">@color/ou_window_background</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorAccent">#4EA6EA</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <style name="Theme.UtauMarket.Splash" parent="Theme.UtauMarket" />
+</resources>

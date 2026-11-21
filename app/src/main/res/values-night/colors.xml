@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 取自 OpenUtau/Colors/DarkTheme.axaml -->
+    <color name="ou_background">#26232C</color>
+    <color name="ou_window_background">#26232C</color>
+</resources>

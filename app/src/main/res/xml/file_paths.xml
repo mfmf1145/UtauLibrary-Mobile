@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- 下载好的 APK 存放在应用私有目录，通过 FileProvider 暴露给安装器 -->
+    <files-path name="forks" path="forks/" />
+    <cache-path name="cache_apk" path="utm/" />
+</paths>

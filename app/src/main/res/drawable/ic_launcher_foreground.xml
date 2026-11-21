@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    图标：一枚干净的八分音符。
+
+    反复改了几版都不理想，问题在于「音符 + 下载箭头」两个符号硬凑在一起。
+    这一版只保留一个元素：粗体音符，居中，四周留足安全边距。
+    单一形状 = 没有拼接缝、没有缺角、任何启动器裁切形状下都完整。
+
+    坐标 24×24，scale 0.55 + 居中平移 5.4，内容落在中心 60% 安全区内。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <group android:scaleX="0.55" android:scaleY="0.55" android:translateX="5.4" android:translateY="5.4">
+        <!-- 符头 -->
+        <path
+            android:fillColor="#4EA6EA"
+            android:pathData="M5.2,16.4a3.4,3.4 0,1 0,6.8 0a3.4,3.4 0,1 0,-6.8 0z" />
+        <!-- 符干 -->
+        <path
+            android:fillColor="#4EA6EA"
+            android:pathData="M10.2,16.4V4.6h2.8v11.8z" />
+        <!-- 符尾（向右上的弧，与符干共边） -->
+        <path
+            android:fillColor="#4EA6EA"
+            android:pathData="M13.0,4.6c3.4,0.4 5.6,2.6 5.6,5.6c0,1.0 -0.4,1.9 -1.0,2.6c-0.4,-2.2 -1.8,-3.8 -4.6,-4.4z" />
+    </group>
+</vector>

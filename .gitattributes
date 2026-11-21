@@ -1,0 +1,13 @@
+* text=auto eol=lf
+
+*.bat        text eol=crlf
+gradlew      text eol=lf
+
+*.jar        binary
+*.jks        binary
+*.keystore   binary
+*.png        binary
+*.webp       binary
+*.ttf        binary
+
+resource_manifest.json -diff linguist-generated
