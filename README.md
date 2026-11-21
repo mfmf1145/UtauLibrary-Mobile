@@ -264,6 +264,7 @@ MediaFire、Dropbox、MEGA、Google Drive 等境外网盘会拒绝直连，需�
 - 图标来自 [Microsoft Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons)（MIT）
 - 解压依赖 Apache Commons Compress 与 junrar
 - 收录的声库、插件、音素器版权归各自作者所有，本仓库不重新分发资源本体
+- 开发过程中由 AI 编程助手 [DeepSeek](https://www.deepseek.com/) 协助完成部分实现与文档整理
 
 第三方组件清单见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
