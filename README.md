@@ -1,12 +1,15 @@
 # UtauLibrary Mobile
 
+> **简体中文** ｜ [English](README.en.md)
+
+
 [![Android CI](https://github.com/USER/UtauLibrary-Mobile/actions/workflows/android.yml/badge.svg)](https://github.com/USER/UtauLibrary-Mobile/actions/workflows/android.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Android](https://img.shields.io/badge/Android-5.0%2B-brightgreen.svg)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-7F52FF.svg)](https://kotlinlang.org)
 [![Release](https://img.shields.io/badge/release-1.0.0-success.svg)](CHANGELOG.md)
 
-面向 [OpenUtau Mobile](https://github.com/vocoder712/OpenUtauMobile) 的声库、插件与音素器管理器，同时是一个下载器。
+面向 [OpenUtau Mobile](https://github.com/stakira/OpenUtau) 的声库、插件与音素器管理器，同时是一个下载器。
 
 **分工**：OpenUtau Mobile 负责创作，UtauLibrary Mobile 负责找资源、下资源、装资源、查问题。
 
@@ -55,7 +58,7 @@ UtauLibrary Mobile 补上这一段：
 
 ### 🎙️ 资源库
 
-- 收录 **990+ 声库**、**71 个插件与音素器**、**8 个分支改版**
+- 收录 **990+ 个声库**、**71 个插件与音素器**、**8 个分支改版**
 - 每条记录包含名称、作者、语言、录音方式（CV / VCV / CVVC）、引擎、体积、版本、来源平台与简介
 - 支持 UTAU、DiffSinger、OpenUtau 原生格式混排展示
 
@@ -260,11 +263,10 @@ MediaFire、Dropbox、MEGA、Google Drive 等境外网盘会拒绝直连，需�
 
 代码以 [MIT](LICENSE) 发布。
 
-- 主题配色取自 [OpenUtau](https://github.com/openutau/OpenUtau) 的 `DarkTheme.axaml` / `LightTheme.axaml`
+- 主题配色取自 [OpenUtau](https://github.com/stakira/OpenUtau) 的 `DarkTheme.axaml` / `LightTheme.axaml`
 - 图标来自 [Microsoft Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons)（MIT）
 - 解压依赖 Apache Commons Compress 与 junrar
 - 收录的声库、插件、音素器版权归各自作者所有，本仓库不重新分发资源本体
-- 开发过程中由 AI 编程助手 [DeepSeek](https://www.deepseek.com/) 协助完成部分实现与文档整理
 
 第三方组件清单见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
