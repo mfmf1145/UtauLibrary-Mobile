@@ -218,7 +218,7 @@ app/src/main/
 
 **装完了，已安装里没有？**
 
-点右上角刷新。仍然没有时查看 `Download/UtauMarketMobile-extract.txt`，里面记录了实际解压出的目录结构��
+点右上角刷新。仍然没有时查看 `Download/UtauMarketMobile-extract.txt`，里面记录了实际解压出的目录结构
 
 **OpenUtau Mobile 找不到刚装的声库？**
 
