@@ -2,7 +2,7 @@
 
 > [简体中文](README.md) ｜ **English**
 
-[![Android CI](https://github.com/USER/UtauLibrary-Mobile/actions/workflows/android.yml/badge.svg)](https://github.com/USER/UtauLibrary-Mobile/actions/workflows/android.yml)
+[![Android CI](https://github.com/mfmf1145/UtauLibrary-Mobile/actions/workflows/android.yml/badge.svg)](https://github.com/mfmf1145/UtauLibrary-Mobile/actions/workflows/android.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Android](https://img.shields.io/badge/Android-5.0%2B-brightgreen.svg)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-7F52FF.svg)](https://kotlinlang.org)
@@ -102,7 +102,7 @@ UtauLibrary Mobile covers that part:
 
 ## Install
 
-1. Download `UtauLibrary-Mobile-1.0.0.apk` from [Releases](https://github.com/USER/UtauLibrary-Mobile/releases)
+1. Download `UtauLibrary-Mobile-1.0.0.apk` from [Releases](https://github.com/mfmf1145/UtauLibrary-Mobile/releases/tag/UtauLibrary-Mobile)
 2. Allow installation from unknown sources, then install
 3. Grant one root folder on first launch
 

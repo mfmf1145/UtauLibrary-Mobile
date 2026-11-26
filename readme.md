@@ -3,7 +3,7 @@
 > **简体中文** ｜ [English](README.en.md)
 
 
-[![Android CI](https://github.com/USER/UtauLibrary-Mobile/actions/workflows/android.yml/badge.svg)](https://github.com/USER/UtauLibrary-Mobile/actions/workflows/android.yml)
+[![Android CI](https://github.com/mfmf1145/UtauLibrary-Mobile/actions/workflows/android.yml/badge.svg)](https://github.com/mfmf1145/UtauLibrary-Mobile/actions/workflows/android.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Android](https://img.shields.io/badge/Android-5.0%2B-brightgreen.svg)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-7F52FF.svg)](https://kotlinlang.org)
@@ -62,7 +62,7 @@ UtauLibrary Mobile 补上这一段：
 - 每条记录包含名称、作者、语言、录音方式（CV / VCV / CVVC）、引擎、体积、版本、来源平台与简介
 - 支持 UTAU、DiffSinger、OpenUtau 原生格式混排展示
 
-### 🔍 检索与筛选
+### 🔍 棢索与筛选
 
 - 关键词搜索支持中文、日文、罗马音：输入 `teto` 可命中「重音テト」
 - 组合筛选：语言、引擎、录音方式、来源、体积区间、网络状态
@@ -95,14 +95,14 @@ UtauLibrary Mobile 补上这一段：
 
 - 沿用 OpenUtau 的视觉语言：0 圆角、1px 描边、扁平、高密度
 - 10 套配色，逐条取自 OpenUtau 原版 `DarkTheme.axaml` / `LightTheme.axaml`
-- 深色与浅色跟随系统���支持横竖屏
+- 深色与浅色跟随系统，支持横竖屏
 - 四种语言：简体中文、繁體中文、English、日本語
 
 ---
 
 ## 安装
 
-1. 从 [Releases](https://github.com/USER/UtauLibrary-Mobile/releases) 下载 `UtauLibrary-Mobile-1.0.0.apk`
+1. 从 [Releases](https://github.com/mfmf1145/UtauLibrary-Mobile/releases/tag/UtauLibrary-Mobile) 下载 `UtauLibrary-Mobile-1.0.0.apk`
 2. 允许「安装未知来源应用」后安装
 3. 首次启动按引导授权一个根目录
 
@@ -163,7 +163,7 @@ export UTM_KEY_PASSWORD=...
 app/src/main/
 ├── assets/
 │   └── resource_manifest.json      # 全部收录条目的数据源
-├── java/com/utaumarket/mobile/
+��── java/com/utaumarket/mobile/
 │   ├── archive/                    # 解压内核与目录结构识别
 │   │   ├── ArchiveExtractor.kt     # zip / rar / 7z / tar.gz
 │   │   ├── Installer.kt            # 类型嗅探与归位
@@ -188,7 +188,7 @@ app/src/main/
 | UI | Jetpack Compose（BOM 2024.06.00）|
 | 构建 | AGP 8.5.2 / Gradle 8.7 |
 | 解压 | 纯 JVM：`java.util.zip` + Apache Commons Compress + junrar，无 native `.so` |
-| 文件访问 | SAF（`ACTION_OPEN_DOCUMENT_TREE` + 持久化授权），只申请一个根目录 |
+| 文件访问 | SAF（`ACTION_OPEN_DOCUMENT_TREE` + 持久��授权），只申请一个根目录 |
 | 网络 | OkHttp |
 | 图标 | Microsoft Fluent UI System Icons（MIT）|
 
@@ -226,7 +226,7 @@ app/src/main/
 
 **下载失败，提示 403？**
 
-MediaFire、Dropbox、MEGA、Google Drive 等境外网盘会拒绝直连，需要代理。这类条目在清单里已标「需代理」。
+MediaFire、Dropbox、MEGA、Google Drive 等境外网盘会拒��直连，需要代理。这类条目在清单里已标「需代理」。
 
 **下载速度慢？**
 
@@ -238,7 +238,7 @@ MediaFire、Dropbox、MEGA、Google Drive 等境外网盘会拒绝直连，需�
 
 **可以只下载不解压吗？**
 
-可以，在设置里��闭自动安装；此时压缩包会原样保存到目标目录。
+可以，在设置里关闭自动安装；此时压缩包会原样保存到目标目录。
 
 ---
 
@@ -264,7 +264,7 @@ MediaFire、Dropbox、MEGA、Google Drive 等境外网盘会拒绝直连，需�
 代码以 [MIT](LICENSE) 发布。
 
 - 主题配色取自 [OpenUtau](https://github.com/stakira/OpenUtau) 的 `DarkTheme.axaml` / `LightTheme.axaml`
-- 图标来自 [Microsoft Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons)（MIT）
+- ���标来自 [Microsoft Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons)（MIT）
 - 解压依赖 Apache Commons Compress 与 junrar
 - 收录的声库、插件、音素器版权归各自作者所有，本仓库不重新分发资源本体
 

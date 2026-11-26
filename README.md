@@ -3,7 +3,7 @@
 > **简体中文** ｜ [English](README.en.md)
 
 
-[![Android CI](https://github.com/USER/UtauLibrary-Mobile/actions/workflows/android.yml/badge.svg)](https://github.com/USER/UtauLibrary-Mobile/actions/workflows/android.yml)
+[![Android CI](https://github.com/mfmf1145/UtauLibrary-Mobile/actions/workflows/android.yml/badge.svg)](https://github.com/mfmf1145/UtauLibrary-Mobile/actions/workflows/android.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Android](https://img.shields.io/badge/Android-5.0%2B-brightgreen.svg)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-7F52FF.svg)](https://kotlinlang.org)
@@ -11,7 +11,7 @@
 
 面向 [OpenUtau Mobile](https://github.com/stakira/OpenUtau) 的声库、插件与音素器管理器，同时是一个下载器。
 
-**分工**：OpenUtau Mobile 负责创作，UtauLibrary Mobile 负责找资源、下资源、装资源、查问题。
+**分工**：OpenUtau Mobile 负责创作，UtauLibrary Mobile 负责找资源、下���源、装资源、查问题。
 
 本项目是独立 APK，不修改 OpenUtau Mobile 源码，也不依赖它运行。
 
@@ -102,7 +102,7 @@ UtauLibrary Mobile 补上这一段：
 
 ## 安装
 
-1. 从 [Releases](https://github.com/USER/UtauLibrary-Mobile/releases) 下载 `UtauLibrary-Mobile-1.0.0.apk`
+1. 从 [Releases](https://github.com/mfmf1145/UtauLibrary-Mobile/releases/tag/UtauLibrary-Mobile) 下载 `UtauLibrary-Mobile-1.0.0.apk`
 2. 允许「安装未知来源应用」后安装
 3. 首次启动按引导授权一个根目录
 
@@ -218,7 +218,7 @@ app/src/main/
 
 **装完了，已安装里没有？**
 
-点右上角刷新。仍然没有时查看 `Download/UtauMarketMobile-extract.txt`，里面记录了实际解压出的目录结构。
+点右上角刷新。仍然没有时查看 `Download/UtauMarketMobile-extract.txt`，里面记录了实际解压出的目录结构��
 
 **OpenUtau Mobile 找不到刚装的声库？**
 
@@ -230,7 +230,7 @@ MediaFire、Dropbox、MEGA、Google Drive 等境外网盘会拒绝直连，需�
 
 **下载速度慢？**
 
-先确认设置里的连接数不低于 16。若站点拒绝多连接，应用会回退单连接，此时速度受单连接带宽限制。日志 `Download/UtauMarketMobile-download.log` 里会记录每次下载的线程设置。
+先确认设置里的连接数不低于 16。若站点拒绝多连接，应用会回退单连接，此时速度受单连接带宽限制。日志 `Download/UtauMarketMobile-download.log` 里会记[...]
 
 **体积显示比预期小？**
 
