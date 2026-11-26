@@ -11,7 +11,7 @@
 
 面向 [OpenUtau Mobile](https://github.com/stakira/OpenUtau) 的声库、插件与音素器管理器，同时是一个下载器。
 
-**分工**：OpenUtau Mobile 负责创作，UtauLibrary Mobile 负责找资源、下���源、装资源、查问题。
+**分工**：OpenUtau Mobile 负责创作，UtauLibrary Mobile 负责找资源、下资源、装资源、查问题。
 
 本项目是独立 APK，不修改 OpenUtau Mobile 源码，也不依赖它运行。
 
